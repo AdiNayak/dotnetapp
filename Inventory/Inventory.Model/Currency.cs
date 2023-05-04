@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace Inventory.Model
 {
-	public class InvoiceType
+	public class Currency
 	{
-		public int InvoiceTypeId { get; set; }
+        public int Id { get; set; }
 		[Required]
-		public string InvoiceName { get; set; }
-		public string Description { get; set; }
-	}
+		public string Name { get; set; }
+        public string Code { get; set; }
+        public string Description { get; set; }
+
+    }
 }
