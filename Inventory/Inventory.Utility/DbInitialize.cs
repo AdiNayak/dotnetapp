@@ -8,6 +8,8 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -56,7 +58,8 @@ namespace Inventory.Utility
 			}
 		}
 
-		public Task SendEmail(string fromEmail,
+		public async Task SendEmail(string fromEmail,
+			string subject,
 			string fromName,
 			string message,
 			string toEmail,
@@ -67,7 +70,26 @@ namespace Inventory.Utility
 			string smtpPort,
 			bool smtpSSL)
 		{
-			throw new NotImplementedException();
+			var body = message;
+			var messageRequest = new MailMessage();
+			messageRequest.To.Add(new MailAddress(toEmail, toName));
+			messageRequest.From = new MailAddress(fromEmail, fromName);
+			messageRequest.Subject = subject;
+			messageRequest.Body = body;
+			messageRequest.IsBodyHtml = true;
+			using (var smtp = new SmtpClient())
+			{
+				var credential = new NetworkCredential
+				{
+					UserName = smtpUser,
+					Password = smtpPassword
+				};
+				smtp.Credentials = credential;
+				smtp.Host= smtpHost;
+				smtp.Port = Convert.ToInt32( smtpPort);
+				smtp.EnableSsl= smtpSSL;
+				await smtp.SendMailAsync(messageRequest);
+			}
 		}
 
 		public async Task<string> UploadFile(List<IFormFile> files, IWebHostEnvironment env, string directory)

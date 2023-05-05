@@ -13,6 +13,7 @@ namespace Inventory.Utility
 		void CreateSuperAdmin();
 
 		Task SendEmail(string fromEmail,
+			string subject,
 			string fromName,
 			string message,
 			string toEmail,
