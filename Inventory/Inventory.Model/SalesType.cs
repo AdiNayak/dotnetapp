@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.Model
 {
-	internal class SaleType
+	public class SalesType
 	{
 		public int SaleTypeId { get; set; }
 		[Required]

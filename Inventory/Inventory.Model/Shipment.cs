@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace Inventory.Model
 {
-	internal class Shipment
+	public class Shipment
 	{
         public int Id { get; set; }
 		[Display(Name = "Shipment Name")]
