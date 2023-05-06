@@ -6,3 +6,4 @@
 .vs
 Debug
 obj
+*.csproj.user*

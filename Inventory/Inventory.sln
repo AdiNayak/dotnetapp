@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Web", "Inventory.Web\Inventory.Web.csproj", "{B6328901-D8C4-485D-A401-6FB0C67173C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Web", "Inventory.Web\Inventory.Web.csproj", "{B6328901-D8C4-485D-A401-6FB0C67173C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Repository", "Inventory.Repository\Inventory.Repository.csproj", "{80DD24EF-0261-4414-B119-04D987212E45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Repository", "Inventory.Repository\Inventory.Repository.csproj", "{80DD24EF-0261-4414-B119-04D987212E45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Model", "Inventory.Model\Inventory.Model.csproj", "{DD583E51-F125-4140-8908-96036173BD06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Model", "Inventory.Model\Inventory.Model.csproj", "{DD583E51-F125-4140-8908-96036173BD06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Service", "Inventory.Service\Inventory.Service.csproj", "{5D6B8398-B903-471C-A427-A61766585A12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Service", "Inventory.Service\Inventory.Service.csproj", "{5D6B8398-B903-471C-A427-A61766585A12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Utility", "Inventory.Utility\Inventory.Utility.csproj", "{1CF5CF42-86E8-4EDA-8015-3E4C91015145}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Utility", "Inventory.Utility\Inventory.Utility.csproj", "{1CF5CF42-86E8-4EDA-8015-3E4C91015145}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.ViewModel", "Inventory.ViewModel\Inventory.ViewModel.csproj", "{97B4FBFA-2943-4575-B764-62BB773D3754}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1CF5CF42-86E8-4EDA-8015-3E4C91015145}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CF5CF42-86E8-4EDA-8015-3E4C91015145}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CF5CF42-86E8-4EDA-8015-3E4C91015145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B4FBFA-2943-4575-B764-62BB773D3754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B4FBFA-2943-4575-B764-62BB773D3754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B4FBFA-2943-4575-B764-62BB773D3754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B4FBFA-2943-4575-B764-62BB773D3754}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
