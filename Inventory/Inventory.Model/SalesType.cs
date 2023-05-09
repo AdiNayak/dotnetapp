@@ -9,6 +9,7 @@ namespace Inventory.Model
 {
 	public class SalesType
 	{
+		[Key]
 		public int SaleTypeId { get; set; }
 		[Required]
 		public string SaleTypeName { get; set; }

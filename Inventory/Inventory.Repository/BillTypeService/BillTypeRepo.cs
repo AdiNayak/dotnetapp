@@ -37,8 +37,10 @@ namespace Inventory.Repository.BillTypeService
 		{
 			var billTypesList = _context.BillTypes;
 			var vm = billTypesList.ModelToVM().AsQueryable();
-			return await PaginatedList<BillTypeListViewModel>.CreateAsync(vm, pageNumber, pageSize);
-		}
+            var  res = await PaginatedList<BillTypeListViewModel>.CreateAsync(vm, pageNumber, pageSize);
+            return res;
+
+        }
         public BillTypeViewModel GetById(int id)
         {
             var model = _context.BillTypes.Where( x => x.BillTypeId == id ).FirstOrDefault();
