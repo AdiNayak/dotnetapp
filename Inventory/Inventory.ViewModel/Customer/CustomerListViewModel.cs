@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.Model
 {
-	public class Customer
+	public class CustomerListViewModel
 	{
 		public int CustomerId { get; set; }
 		[Required]
@@ -22,6 +22,7 @@ namespace Inventory.Model
 		public string ZipCode { get; set; }
 		public string Phone { get; set; }
 		public string Email { get; set; }
+
         public string ContactPerson { get; set; }
     }
 }

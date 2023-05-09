@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Inventory.Model\Inventory.Model.csproj" />
+    <ProjectReference Include="..\Inventory.ViewModel\Inventory.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

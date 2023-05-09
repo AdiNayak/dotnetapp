@@ -1,0 +1,53 @@
+﻿@model PaginatedList<Inventory.ViewModel.Bill.BillTypeListViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row">
+    <div class="col-6">
+        <label>Add New Bill</label>
+        <a asp-action="" class="btn btn-primary"> Add </a>
+    </div>
+    <div class="col-6"> Search Here .... </div>
+<div class="row">
+    <table>
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model[0].BillTypeId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model[0].BillTypeName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model[0].Description)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BillTypeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BillTypeName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+    </table>
+</div>
+</div>

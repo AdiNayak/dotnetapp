@@ -5,15 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inventory.Model
+namespace Inventory.ViewModel.Bill
 {
-	public class BillType
+	public class BillTypeListViewModel
 	{
-		[Key]
-        public int BillTypeId  { get; set; }
+		public int BillTypeId { get; set; }
 		[Required]
 		public string BillTypeName { get; set; }
 		public string Description { get; set; }
-
 	}
 }

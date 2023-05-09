@@ -7,6 +7,11 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Configuration;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
+using Inventory.Repository.BillTypeService;
+using System.Security.AccessControl;
+using Inventory.Model;
+using Inventory.Repository.CustomerTypeService;
 
 var webApplicationOptions = new WebApplicationOptions
 {
@@ -17,10 +22,13 @@ var builder = WebApplication.CreateBuilder(webApplicationOptions);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+	options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentity<AppUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+	.AddEntityFrameworkStores<ApplicationDbContext>();
+
+//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 //builder.Services.AddDbContext<ApplicationDbContext>(option =>
 //	option.UseSqlServer(builder.Configuration.GetConnectionString("InventoryDb")));
@@ -28,9 +36,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddScoped<IBillTypeRepo, BillTypeRepo>();
+builder.Services.AddScoped<ICustomerTypeRepo, CustomerTypeRepo>();
 builder.Services.Configure<SuperAdmin>(builder.Configuration.GetSection("SuperAdmin"));
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -45,7 +53,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication();;
+app.UseAuthentication();
 
 app.UseAuthorization();
 
@@ -54,3 +62,5 @@ app.MapControllerRoute(
 	pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+

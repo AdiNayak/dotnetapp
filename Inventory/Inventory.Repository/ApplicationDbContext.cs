@@ -45,5 +45,5 @@ namespace Inventory.Repository
 		public DbSet<Vendor> Vendors { get; set; }
 		public DbSet<VendorType> VendorTypes { get; set; }
 		public DbSet<Warehouse> Warehouses { get; set; }
-	}
+    }
 }
