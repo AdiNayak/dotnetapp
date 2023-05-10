@@ -8,11 +8,12 @@
 <div class="row">
     <div class="col-6">
         <label>Add New Bill</label>
-        <a asp-action="" class="btn btn-primary"> Add </a>
+        <a asp-action="Create" asp-controller="BillType" class="btn btn-primary"> Add </a>
     </div>
     <div class="col-6"> Search Here .... </div>
+    <hr />
 <div class="row">
-    <table>
+    <table class="table table-bordered table-hover table-responsive">
             <thead>
                 <tr>
                     <th>
@@ -24,7 +25,7 @@
                     <th>
                         @Html.DisplayNameFor(model => model[0].Description)
                     </th>
-                    <th></th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,9 +42,9 @@
                             @Html.DisplayFor(modelItem => item.Description)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                            <a asp-route-id="@item.BillTypeId"  asp-action="Edit" class="btn btn-primary"> Edit </a>
+                             |
+                            <a asp-route-id="@item.BillTypeId"  asp-action="Delete" class="btn btn-danger"> Delete </a>
                         </td>
                     </tr>
                 }

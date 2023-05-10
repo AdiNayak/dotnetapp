@@ -24,7 +24,7 @@ namespace Inventory.Repository.ProductTypeService
 		{
 			var productTypeList = _context.ProductTypes;
 			var vm = productTypeList.ModelToVM().AsQueryable();
-			return await PaginatedList<ProductTypeListViewModel>.CreateAsync(vm, pageNumber, pageSize);
+			return  PaginatedList<ProductTypeListViewModel>.CreateAsync(vm, pageNumber, pageSize);
 		}
 	}
 }

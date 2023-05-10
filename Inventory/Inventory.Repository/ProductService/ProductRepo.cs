@@ -22,7 +22,7 @@ namespace Inventory.Repository.ProductService
 		{
 			var productList = _context.Products;
 			var vm = productList.ModelToVM().AsQueryable();
-			return await PaginatedList<ProductListViewModel>.CreateAsync(vm, pageNumber, pageSize);
+			return  PaginatedList<ProductListViewModel>.CreateAsync(vm, pageNumber, pageSize);
 		}
 	}
 }

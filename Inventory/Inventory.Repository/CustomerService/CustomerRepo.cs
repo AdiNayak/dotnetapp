@@ -24,7 +24,7 @@ namespace Inventory.Repository.CustomerService
 		{
 			var customerList = _context.Customers;
 			var vm = customerList.ModelToVM().AsQueryable();
-			return await PaginatedList<CustomerListViewModel>.CreateAsync( vm, pageNumber, pageSize);
+			return  PaginatedList<CustomerListViewModel>.CreateAsync( vm, pageNumber, pageSize);
 		}
 	}
 }

@@ -15,11 +15,11 @@ namespace Inventory.Web.Controllers
 		}
 
 		[HttpGet]
-		public async Task<IActionResult> Index(int pageSize = 10, int PageNumber = 1)
+		public async Task<IActionResult> Index(int pageSize = 10, int pageNumber = 1)
 		{
 			try
 			{
-				var billTypes = await _billTypeRepo.GetAll(pageSize, PageNumber);
+				var billTypes = await _billTypeRepo.GetAll(pageSize, pageNumber);
 				return View(billTypes);
 			}
 			catch (System.Exception ex)
@@ -55,11 +55,11 @@ namespace Inventory.Web.Controllers
 
 
         [HttpPost]
-        public IActionResult Edit(CreateBillTypeViewModel model)
+        public IActionResult Edit(BillTypeViewModel model)
         {
             if (ModelState.IsValid)
             {
-                _billTypeRepo.Add(model);
+                _billTypeRepo.Update(model);
                 return Redirect("Index");
             }
             return View();

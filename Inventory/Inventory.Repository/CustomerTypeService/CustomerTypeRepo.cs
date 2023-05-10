@@ -22,7 +22,7 @@ namespace Inventory.Repository.CustomerTypeService
 		{
 			var customerTypeList = _context.CustomerTypes;
 			var vm = customerTypeList.ModelToVM().AsQueryable();
-			return await PaginatedList<CustomerTypeListViewModel>.CreateAsync(vm, pageNumber, pageSize);
+			return  PaginatedList<CustomerTypeListViewModel>.CreateAsync(vm, pageNumber, pageSize);
 		}
 	}
 }

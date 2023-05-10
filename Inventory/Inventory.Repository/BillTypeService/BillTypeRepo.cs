@@ -36,8 +36,8 @@ namespace Inventory.Repository.BillTypeService
         public async Task<PaginatedList<BillTypeListViewModel>> GetAll(int pageSize, int pageNumber)
 		{
 			var billTypesList = _context.BillTypes;
-			var vm = billTypesList.ModelToVM().AsQueryable();
-            var  res = await PaginatedList<BillTypeListViewModel>.CreateAsync(vm, pageNumber, pageSize);
+			var vm = billTypesList.ModelToVM().ToList().AsQueryable();
+            var  res =  PaginatedList<BillTypeListViewModel>.CreateAsync(vm, pageNumber, pageSize);
             return res;
 
         }

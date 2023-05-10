@@ -22,7 +22,7 @@ namespace Inventory.Repository.BillService
 		{
 			var billList = _context.Bills;
 			var vm = billList.ModelToVM().AsQueryable();
-			return await PaginatedList<BillListViewModel>.CreateAsync(vm, pageNumber, pageSize);
+			return  PaginatedList<BillListViewModel>.CreateAsync(vm, pageNumber, pageSize);
 		}
 	}
 }
